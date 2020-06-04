@@ -4,11 +4,7 @@ from datetime import datetime
 
 
 def home(request):
-    """ Exemple de page non valide au niveau HTML pour que l'exemple soit concis """
-    return HttpResponse("""
-    <h1>Votre prochaine voiture vous attend !</h1>
-    <p>Louez une voiture à l'heure ou à la journée!</p>
-    """)
+    return render(request, 'acceuil/acceuil.html')
 
 
 def date_actuelle(request):
