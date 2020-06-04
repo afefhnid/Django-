@@ -4,7 +4,51 @@ from datetime import datetime
 
 
 def home(request):
-    return render(request, 'acceuil/acceuil.html')
+    agences=[
+        {
+            "name": "Molecule Man",
+            "city": "Molecule Man",
+            "prix": "45" ,
+            "car": [
+            "Radiation resistance",
+            "Turning tiny",
+            "Radiation blast"
+            ]
+        },
+        {
+            "name": "Molecule Man",
+            "city": "Molecule Man",
+            "prix": "52",
+            "car": [
+            "Radiation resistance",
+            "Turning tiny",
+            "Radiation blast"
+            ]
+        }
+    ]
+    locations=[
+        {
+            "name": "Molecule Man",
+            "city": "Molecule Man",
+            "prix": "45" ,
+            "car": [
+            "Radiation resistance",
+            "Turning tiny",
+            "Radiation blast"
+            ]
+        },
+        {
+            "name": "Molecule Man",
+            "city": "Molecule Man",
+            "prix": "52",
+            "car": [
+            "Radiation resistance",
+            "Turning tiny",
+            "Radiation blast"
+            ]
+        }
+    ]
+    return render(request, 'acceuil/acceuil2.html', {'agences':agences,'locations':locations})
 
 
 def date_actuelle(request):
