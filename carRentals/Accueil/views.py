@@ -10,3 +10,4 @@ def home(request):
 def date_actuelle(request):
     return render(request, 'blog/date.html', {'date': datetime.now()})
 # Create your views here.
+
