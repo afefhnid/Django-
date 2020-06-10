@@ -32,3 +32,29 @@ class Login(models.Model):
         return self.email
 
     # Create your models here.
+
+
+class Vehicule(models.Model):
+    marque = models.CharField(max_length=100)
+    nbPorte = models.IntegerField()
+    modele = models.CharField(max_length=100)
+    annee = models.DateField()
+    marque = models.CharField(max_length=100)
+    prix = models.IntegerField()
+
+    def __str__(self):
+
+        return self.marque
+
+    # Create your models here.
+
+
+class Agence(models.Model):
+    nom = models.CharField(max_length=100)
+    adresse = models.CharField(max_length=100)
+    ville = models.CharField(max_length=100)
+    horaire = models.CharField(max_length=100)
+
+    def __str__(self):
+
+        return self.nom
