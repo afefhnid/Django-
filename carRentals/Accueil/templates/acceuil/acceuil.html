@@ -2,17 +2,19 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+<div>
 <div
 style="
       background-image: url('https://mdbootstrap.com/img/Photos/Others/images/91.jpg');
       background-size: cover;
+      height: 800px;
     ">
     <div
       style="
         width: 50%;
         height: 538px;
         margin: 0 auto;
-        padding: 188px 0px 0px 0px;
+        padding: 270px 0px 0px 0px;
       "
     >
     <form style="font-family: auto;">
@@ -52,12 +54,64 @@ style="
       padding: 0px 0px 0px 2px;
       margin: 0 0 0 0px;">Comparez</button>
     </form>
-<<<<<<< HEAD
    
-=======
-
->>>>>>> b8641e6b3134557c5db494ce73889cd26224c44e
     </div>
-    
   </div>
+
+  <div style="margin: 347px 0px 25px 103px;">
+    <h3 style="text-align: center;">Offre de location de voiture</h3>
+    <div style="margin-left: 23em;" class="col-md-6">
+      <nav  class="nav nav-pills nav-justified">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Top destinations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">En France</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Dans le monde</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">DerniÃ¨res recherches</a>
+        </li>
+      </nav>
+    </div>
+    <div class="card-group" style="margin-top: 15px; padding: 0 0 111px 0px;">
+    {% for location in locations %}
+    <div class="col-md-2" style="margin-bottom: 10px;">
+      <div class="card bg-dark text-white">
+        <img class="card-img-top " 
+        src={{ location.image }}
+        alt="Card image cap"
+        style="width: 100%;height: 250px;object-fit: cover;">
+          <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, 0.5); height: 30px; padding-top:0px; margin-top: 108px;">
+            <div class="row">
+              <div class="col-md-8">{{ location.marque }} </div>
+              <div class="col-md-4" style="padding-top: 2px; text-align: center; font-weight: bold; height: 30px; background-color: yellow; color:black">{{ location.prix }}$</div>
+            </div>
+          </div>
+      </div>
+    </div>
+    {% empty %}
+      <p>Aucune offre.</p>
+    {% endfor %}
+  </div>
+    <h3 style="text-align: center; padding: 0 0 56px 0px; ">Agences de location de voiture</h3>
+    <div class="card-group">
+    {% for agence in agences %}
+    <div class="col-md-2" style="margin-bottom: 10px;">
+      <div class="card bg-dark text-white">
+        <img class="card-img-top " src={{ agence.image }} alt="Card image cap">
+          <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, 0.5); height: 30px; padding-top:0px; margin-top: 108px;">
+            {{ agence.nom }}
+          </div>
+      </div>
+    </div>
+    {% empty %}
+      <p>Aucune agence.</p>
+    {% endfor %}
+  </div>
+</div>
+  </div>
+  
     {% endblock %}

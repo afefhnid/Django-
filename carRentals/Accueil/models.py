@@ -53,6 +53,7 @@ class Agence(models.Model):
     adresse = models.CharField(max_length=100)
     ville = models.CharField(max_length=100)
     horaire = models.CharField(max_length=100)
+    image = models.CharField(max_length=500)
 
     def __str__(self):
 
