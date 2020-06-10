@@ -28,13 +28,11 @@ def home1(request):
                 "Turning tiny",
                 "Radiation blast"
             ]
-        }
-    ]
-    locations = [
+        },
         {
             "name": "Molecule Man",
             "city": "Molecule Man",
-            "prix": "45",
+            "prix": "82",
             "car": [
                 "Radiation resistance",
                 "Turning tiny",
@@ -44,7 +42,89 @@ def home1(request):
         {
             "name": "Molecule Man",
             "city": "Molecule Man",
-            "prix": "52",
+            "prix": "81",
+            "car": [
+                "Radiation resistance",
+                "Turning tiny",
+                "Radiation blast"
+            ]
+        },
+        {
+            "name": "Molecule Man",
+            "city": "Molecule Man",
+            "prix": "75",
+            "car": [
+                "Radiation resistance",
+                "Turning tiny",
+                "Radiation blast"
+            ]
+        },
+        {
+            "name": "Molecule Man",
+            "city": "Molecule Man",
+            "prix": "85",
+            "car": [
+                "Radiation resistance",
+                "Turning tiny",
+                "Radiation blast"
+            ]
+        },
+        {
+            "name": "Molecule Man",
+            "city": "Molecule Man",
+            "prix": "90",
+            "car": [
+                "Radiation resistance",
+                "Turning tiny",
+                "Radiation blast"
+            ]
+        },
+        {
+            "name": "Molecule Man",
+            "city": "Molecule Man",
+            "prix": "25",
+            "car": [
+                "Radiation resistance",
+                "Turning tiny",
+                "Radiation blast"
+            ]
+        },
+        {
+            "name": "Molecule Man",
+            "city": "Molecule Man",
+            "prix": "26",
+            "car": [
+                "Radiation resistance",
+                "Turning tiny",
+                "Radiation blast"
+            ]
+        },
+        {
+            "name": "Molecule Man",
+            "city": "Molecule Man",
+            "prix": "30",
+            "car": [
+                "Radiation resistance",
+                "Turning tiny",
+                "Radiation blast"
+            ]
+        }
+    ]
+    locations = [
+        {
+            "name": "Molecule Man",
+            "city": "Molecule Man",
+            "prix": "41",
+            "car": [
+                "Radiation resistance",
+                "Turning tiny",
+                "Radiation blast"
+            ]
+        },
+        {
+            "name": "Molecule Man",
+            "city": "Molecule Man",
+            "prix": "40",
             "car": [
                 "Radiation resistance",
                 "Turning tiny",
