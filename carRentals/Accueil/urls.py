@@ -6,5 +6,5 @@ urlpatterns = [
     path('snippet', views.snippet_detail),
     path('login', views.login),
     path('date', views.date_actuelle),
-
+    path('Vehicule', views.compare),
 ]

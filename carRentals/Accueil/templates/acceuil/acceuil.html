@@ -160,7 +160,7 @@
       </div>
     </form>
     {% load bootstrap %}
-    <form method="post" >
+    <form  action='Vehicule' method='GET' style="padding: 0 0 0 29px;" >
       {% csrf_token %} {{form|bootstrap}}
       <button type="submit" style="background-color: #e6ee00;
       border: none;
@@ -168,11 +168,11 @@
       width: 141px;
       height: 36px;
       font-weight: bold;
-      padding: 0px 0px 0px 2px;">Comparez</button>
+      padding: 0px 0px 0px 2px;
+      margin: 0 0 0 0px;">Comparez</button>
     </form>
 
-
-    
     </div>
+    
   </body>
 </html>

@@ -38,8 +38,6 @@ class Vehicule(models.Model):
     marque = models.CharField(max_length=100)
     nbPorte = models.IntegerField()
     modele = models.CharField(max_length=100)
-    annee = models.DateField()
-    marque = models.CharField(max_length=100)
     prix = models.IntegerField()
 
     def __str__(self):
