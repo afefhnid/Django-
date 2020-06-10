@@ -108,5 +108,6 @@ def login(request):
 
 
 def compare(request):
-
-    return render(request, 'Vehicule/Vehicule.html',)
+    query_results = Vehicule.objects.all().values()
+    print("ee", query_results)
+    return render(request, 'Vehicule/Vehicule.html', {'Vehicules': query_results})
