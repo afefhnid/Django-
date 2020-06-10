@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link rel="stylesheet" href="./my.css" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous"
-    />
 
-    <title>CarRentals</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">CarRentals</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
@@ -62,36 +38,39 @@
       </nav>
     </div>
     <div class="card-group" style="margin-top: 15px;">
-    {% for location in locations %}
-    <div class="col-md-2" style="margin-bottom: 10px;">
-      <div class="card bg-dark text-white">
-        <img class="card-img-top " src="https://mdbootstrap.com/img/Photos/Others/images/{{ location.prix }}.jpg" alt="Card image cap">
-          <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, 0.5); height: 30px; padding-top:0px; margin-top: 108px;">
-            <div class="row">
-              <div class="col-md-8">{{ location.city }} </div>
-              <div class="col-md-4" style="padding-top: 2px; text-align: center; font-weight: bold; height: 30px; background-color: yellow; color:black">{{ location.prix }}€</div>
+      {% for location in locations %}
+      <div class="col-md-2" style="margin-bottom: 10px;">
+        <div class="card bg-dark text-white">
+          <img class="card-img-top " 
+          src={{ location.image }}
+          alt="Card image cap"
+          style="width: 100%;height: 250px;object-fit: cover;">
+            <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, 0.5); height: 30px; padding-top:0px; margin-top: 108px;">
+              <div class="row">
+                <div class="col-md-8">{{ location.marque }} </div>
+                <div class="col-md-4" style="padding-top: 2px; text-align: center; font-weight: bold; height: 30px; background-color: yellow; color:black">{{ location.prix }}$</div>
+              </div>
             </div>
-          </div>
+        </div>
       </div>
+      {% empty %}
+        <p>Aucune offre.</p>
+      {% endfor %}
     </div>
-    {% empty %}
-      <p>Aucune offre.</p>
-    {% endfor %}
-  </div>
     <h3 style="text-align: center;">Agences de location de voiture</h3>
     <div class="card-group">
-    {% for agence in agences %}
-    <div class="col-md-2" style="margin-bottom: 10px;">
-      <div class="card bg-dark text-white">
-        <img class="card-img-top " src="https://mdbootstrap.com/img/Photos/Others/images/{{ agence.prix }}.jpg" alt="Card image cap">
-          <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, 0.5); height: 30px; padding-top:0px; margin-top: 108px;">
-            {{ agence.city }}
-          </div>
+      {% for agence in agences %}
+      <div class="col-md-2" style="margin-bottom: 10px;">
+        <div class="card bg-dark text-white">
+          <img class="card-img-top " src={{ agence.image }} alt="Card image cap">
+            <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, 0.5); height: 30px; padding-top:0px; margin-top: 5px;">
+              {{ agence.nom }}
+            </div>
+        </div>
       </div>
+      {% empty %}
+        <p>Aucune agence.</p>
+      {% endfor %}
     </div>
-    {% empty %}
-      <p>Aucune agence.</p>
-    {% endfor %}
-  </div>
   </body>
 </html>
