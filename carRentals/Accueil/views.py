@@ -5,6 +5,7 @@ from .forms import DateForm, SnippetForm, LoginForm
 from django.http import HttpResponseRedirect
 
 from bootstrap_datepicker_plus import DateTimePickerInput
+from .models import Vehicule
 
 
 def home1(request):
@@ -141,6 +142,9 @@ def date_actuelle(request):
 
 
 def home(request):
+    query_results = Vehicule.objects.all().values('marque')
+
+    print(query_results)
     if request.method == "POST":
         form = DateForm(request.POST)
         if form.is_valid():
@@ -152,7 +156,8 @@ def home(request):
             # dateRetour = form.cleaned_data['dateRetour']
 
     form = DateForm()
-    return render(request, 'acceuil/acceuil.html', {'form': form})
+
+    return render(request, 'acceuil/acceuil.html', {'form': form, 'Vehicule': query_results})
 
 
 def snippet_detail(request):
@@ -180,3 +185,8 @@ def login(request):
 
     form = LoginForm()
     return render(request, 'acceuil/login.html', {'form': form})
+
+
+def compare(request):
+
+    return render(request, 'Vehicule/Vehicule.html',)
