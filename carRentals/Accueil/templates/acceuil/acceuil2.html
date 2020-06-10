@@ -61,17 +61,19 @@
         </li>
       </nav>
     </div>
-    <div class="card-group">
+    <div class="card-group" style="margin-top: 15px;">
     {% for location in locations %}
-    
-      <div class=" col-md-2" style="margin: 10px; border:  1px solid rgb(192, 191, 191);">
-        <div class="card-body">
-          <p class="card-text">{{ location.nom }}</p>
-          <p class="card-text">{{ location.city }}</p>
-          <p class="card-text">{{ location.prix }}€</p>
-        </div>
+    <div class="col-md-2" style="margin-bottom: 10px;">
+      <div class="card bg-dark text-white">
+        <img class="card-img-top " src="https://mdbootstrap.com/img/Photos/Others/images/{{ location.prix }}.jpg" alt="Card image cap">
+          <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, 0.5); height: 30px; padding-top:0px; margin-top: 108px;">
+            <div class="row">
+              <div class="col-md-8">{{ location.city }} </div>
+              <div class="col-md-4" style=" font-weight: bold; height: 30px; background-color: yellow; color:black">{{ location.prix }}€</div>
+            </div>
+          </div>
       </div>
-    
+    </div>
     {% empty %}
       <p>Aucune offre.</p>
     {% endfor %}
@@ -79,14 +81,14 @@
     <h3 style="text-align: center;">Agences de location de voiture</h3>
     <div class="card-group">
     {% for agence in agences %}
-    <div class=" col-md-2" style="margin: 10px; border:  1px solid rgb(192, 191, 191);">
-      <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">{{ agence.nom }}</p>
-          <p class="card-text">{{ agence.city }}</p>
-          <p class="card-text">{{ agence.prix }}€</p>
-        </div>
+    <div class="col-md-2" style="margin-bottom: 10px;">
+      <div class="card bg-dark text-white">
+        <img class="card-img-top " src="https://mdbootstrap.com/img/Photos/Others/images/{{ agence.prix }}.jpg" alt="Card image cap">
+          <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, 0.5); height: 30px; padding-top:0px; margin-top: 108px;">
+            {{ agence.city }}
+          </div>
       </div>
+    </div>
     {% empty %}
       <p>Aucune agence.</p>
     {% endfor %}
