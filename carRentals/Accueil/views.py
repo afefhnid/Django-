@@ -7,53 +7,9 @@ from django.http import HttpResponseRedirect
 from bootstrap_datepicker_plus import DateTimePickerInput
 from .models import Vehicule, Agence
 
-
-def home(request):
-    agences = [
-        {
-            "name": "Molecule Man",
-            "city": "Molecule Man",
-            "prix": "26",
-            "car": [
-                "Radiation resistance",
-                "Turning tiny",
-                "Radiation blast"
-            ]
-        },
-        {
-            "name": "Molecule Man",
-            "city": "Molecule Man",
-            "prix": "30",
-            "car": [
-                "Radiation resistance",
-                "Turning tiny",
-                "Radiation blast"
-            ]
-        }
-    ]
-    locations = [
-        {
-            "name": "Molecule Man",
-            "city": "Molecule Man",
-            "prix": "41",
-            "car": [
-                "Radiation resistance",
-                "Turning tiny",
-                "Radiation blast"
-            ]
-        },
-        {
-            "name": "Molecule Man",
-            "city": "Molecule Man",
-            "prix": "40",
-            "car": [
-                "Radiation resistance",
-                "Turning tiny",
-                "Radiation blast"
-            ]
-        }
-    ]
-    return render(request, 'acceuil/acceuil2.html', {'agences': agences, 'locations': locations})
+from django.contrib.auth import login as dj_login, authenticate
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
 
 
 def date_actuelle(request):
@@ -110,5 +66,24 @@ def login(request):
 
 def compare(request):
     query_results = Vehicule.objects.all().values()
-    print("ee", query_results)
     return render(request, 'Vehicule/Vehicule.html', {'Vehicules': query_results})
+
+
+def agence(request):
+    query_results = Agence.objects.all().values()
+    return render(request, 'Agence/Agence.html', {'Agences': query_results, 'a': "query_results"})
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            dj_login(request, user)
+            return redirect('/')
+    else:
+        form = UserCreationForm()
+    return render(request, 'acceuil/signup.html', {'form': form})

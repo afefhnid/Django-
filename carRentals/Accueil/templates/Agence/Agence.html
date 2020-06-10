@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+      <h1 style="color: #343a40;
+      font-family: 'Raleway',sans-serif;
+      font-size: 31px;
+      font-weight: 800;
+      line-height: 72px;
+      margin: 70px 0 115px;
+      text-align: center;
+      text-transform: uppercase;
+      width: 50%;
+    margin: auto;
+    padding: 52px 0px 50px 0;">Près de 200 agences de location de voitures en France. Présent dans plus de 105 pays dans le monde.</h1>
+    <div class="row" style="margin: auto;">
+    {% for Agence in Agences %}
+
+      <div class="col-md-4">
+        <div class="thumbnail">
+            <figure style="width: 400px; max-height: 400px;">
+            <img
+              src={{ Agence.image }}
+              alt="Nature"
+              style="width: 100%;height: 250px;object-fit: cover;"
+
+            />
+        </figure>
+            <div class="caption">
+              <p>Nom:{{ Agence.nom }} </p>
+              <p>Adresse:{{ Agence.adresse }} </p>
+            </div>
+        </div>
+      </div>
+    {% endfor %}
+      </div>
+    </div>
+    
+{% endblock %}
