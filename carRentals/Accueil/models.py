@@ -39,6 +39,7 @@ class Vehicule(models.Model):
     nbPorte = models.IntegerField()
     modele = models.CharField(max_length=100)
     prix = models.IntegerField()
+    image = models.CharField(max_length=500)
 
     def __str__(self):
 
