@@ -9,25 +9,22 @@
       text-align: center;
       text-transform: uppercase;">Trouvez des offres de location de voitures</h1>
     <div class="row" style="margin: auto;">
-    {% for Vehicule in Vehicules %}
-
-      <div class="col-md-4">
-        <div class="thumbnail">
-            <figure style="width: 400px; max-height: 400px;">
-            <img
-              src={{ Vehicule.image }}
-              alt="Nature"
-              style="width: 100%;height: 250px;object-fit: cover;"
-
-            />
-        </figure>
-            <div class="caption">
-              <p>Marque:{{ Vehicule.marque }} </p>
-              <p>Prix:{{ Vehicule.prix }} </p>
+      {% for Vehicule in Vehicules %}
+      <div class="col-md-4" style="margin-bottom: 10px;">
+        <div class="card bg-dark text-white">
+          <img class="card-img-top " 
+          src={{ Vehicule.image }}
+          alt="Card image cap"
+          style="width: 100%;height: 250px;object-fit: cover;">
+            <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, 0.5); height: 30px; padding-top:0px; margin-top: 217px;">
+              <div class="row">
+                <div class="col-md-8">{{ Vehicule.marque }} </div>
+                <div class="col-md-4" style="padding-top: 2px; text-align: center; font-weight: bold; height: 30px; background-color: yellow; color:black">{{ Vehicule.prix }}$</div>
+              </div>
             </div>
         </div>
       </div>
-    {% endfor %}
+      {% endfor %}
       </div>
     </div>
     
