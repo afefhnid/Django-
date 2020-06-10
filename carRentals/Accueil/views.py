@@ -8,88 +8,8 @@ from bootstrap_datepicker_plus import DateTimePickerInput
 from .models import Vehicule
 
 
-def home1(request):
+def home(request):
     agences = [
-        {
-            "name": "Molecule Man",
-            "city": "Molecule Man",
-            "prix": "45",
-            "car": [
-                "Radiation resistance",
-                "Turning tiny",
-                "Radiation blast"
-            ]
-        },
-        {
-            "name": "Molecule Man",
-            "city": "Molecule Man",
-            "prix": "52",
-            "car": [
-                "Radiation resistance",
-                "Turning tiny",
-                "Radiation blast"
-            ]
-        },
-        {
-            "name": "Molecule Man",
-            "city": "Molecule Man",
-            "prix": "82",
-            "car": [
-                "Radiation resistance",
-                "Turning tiny",
-                "Radiation blast"
-            ]
-        },
-        {
-            "name": "Molecule Man",
-            "city": "Molecule Man",
-            "prix": "81",
-            "car": [
-                "Radiation resistance",
-                "Turning tiny",
-                "Radiation blast"
-            ]
-        },
-        {
-            "name": "Molecule Man",
-            "city": "Molecule Man",
-            "prix": "75",
-            "car": [
-                "Radiation resistance",
-                "Turning tiny",
-                "Radiation blast"
-            ]
-        },
-        {
-            "name": "Molecule Man",
-            "city": "Molecule Man",
-            "prix": "85",
-            "car": [
-                "Radiation resistance",
-                "Turning tiny",
-                "Radiation blast"
-            ]
-        },
-        {
-            "name": "Molecule Man",
-            "city": "Molecule Man",
-            "prix": "90",
-            "car": [
-                "Radiation resistance",
-                "Turning tiny",
-                "Radiation blast"
-            ]
-        },
-        {
-            "name": "Molecule Man",
-            "city": "Molecule Man",
-            "prix": "25",
-            "car": [
-                "Radiation resistance",
-                "Turning tiny",
-                "Radiation blast"
-            ]
-        },
         {
             "name": "Molecule Man",
             "city": "Molecule Man",
